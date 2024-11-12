@@ -752,16 +752,6 @@ banner
     margin-bottom: 40px;
 }
 
-.slide-inner .header-text .div-dec {
-    width: 80px;
-    height: 6px;
-    border-radius: 3px;
-    background-color: #fff;
-    margin-bottom: 40px;
-    opacity: 1;
-    visibility: visible;
-}
-
 .slide-inner .header-text p {
     color: #fff;
     margin-right: 60px;
@@ -790,6 +780,26 @@ banner
 .swiper-button-next,
 .swiper-button-prev {
     color: #fff !important;
+}
+.swiper-container {
+    border-bottom: 1px solid red;
+}
+.swiper-container .images-container {
+    position: absolute;
+    z-index: 999;
+    bottom: 0;
+    transform: translateY(50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.swiper-container .images-container .images {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+.swiper-container .images-container .images:hover {
+    cursor: pointer;
 }
 
 /*
