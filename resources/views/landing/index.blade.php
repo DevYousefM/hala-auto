@@ -88,18 +88,21 @@
 
         <div class="images-container">
             <div class="images">
-                {{-- <div class="img-container" style="width: 25%"> --}}
-                    <img src="{{ asset('front/landing/images/slide-01.jpg') }}" style="width: 30%" class="slide-img" data-slide="0"
-                        alt="">
-                {{-- </div> --}}
-                {{-- <div class="img-container" style="width: 25%"> --}}
-                    <img src="{{ asset('front/landing/images/slide-02.jpg') }}" style="width: 30%" class="slide-img" data-slide="1"
-                        alt="">
-                {{-- </div> --}}
-                {{-- <div class="img-container" style="width: 25%"> --}}
-                    <img src="{{ asset('front/landing/images/slide-03.jpg') }}" style="width: 30%" class="slide-img" data-slide="2"
-                        alt="">
-                {{-- </div> --}}
+                <div class="img-container" style="width: 30%">
+                    <div class="progress-bar" id="progress-0"></div>
+                    <img src="{{ asset('front/landing/images/slide-01.jpg') }}" style="width: 100%" class="slide-img"
+                        data-slide="0" alt="">
+                </div>
+                <div class="img-container" style="width: 30%">
+                    <div class="progress-bar" id="progress-1"></div>
+                    <img src="{{ asset('front/landing/images/slide-02.jpg') }}" style="width: 100%" class="slide-img"
+                        data-slide="1" alt="">
+                </div>
+                <div class="img-container" style="width: 30%">
+                    <div class="progress-bar" id="progress-2"></div>
+                    <img src="{{ asset('front/landing/images/slide-03.jpg') }}" style="width: 100%" class="slide-img"
+                        data-slide="2" alt="">
+                </div>
             </div>
         </div>
     </div>

@@ -801,7 +801,32 @@ banner
 .swiper-container .images-container .images:hover {
     cursor: pointer;
 }
+.swiper-container .images-container .img-container {
+    position: relative;
+}
 
+.swiper-container .images-container .img-container .progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background-color: #ff5722;
+    width: 50%;
+    transition: width 5s linear;
+}
+.progress-bar.active {
+    animation: progressGrow linear forwards;
+    opacity: 1;
+}
+
+@keyframes progressGrow {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
 /*
 ---------------------------------------------
 services

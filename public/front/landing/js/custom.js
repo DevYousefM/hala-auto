@@ -154,7 +154,7 @@
 	});
 
 	$(document).ready(function () {
-	    $(document).on("scroll", onScroll);
+	    // $(document).on("scroll", onScroll);
 
 	    //smoothscroll
 	    $('.scroll-to-section a[href^="#"]').on('click', function (e) {
@@ -173,25 +173,25 @@
 	            scrollTop: (target.offset().top) - 79
 	        }, 500, 'swing', function () {
 	            window.location.hash = target;
-	            $(document).on("scroll", onScroll);
+	            // $(document).on("scroll", onScroll);
 	        });
 	    });
 	});
 
-	function onScroll(event){
-	    var scrollPos = $(document).scrollTop();
-	    $('.nav a').each(function () {
-	        var currLink = $(this);
-	        var refElement = $(currLink.attr("href"));
-	        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-	            $('.nav ul li a').removeClass("active");
-	            currLink.addClass("active");
-	        }
-	        else{
-	            currLink.removeClass("active");
-	        }
-	    });
-	}
+	// function onScroll(event){
+	//     var scrollPos = $(document).scrollTop();
+	//     $('.nav a').each(function () {
+	//         var currLink = $(this);
+	//         var refElement = $(currLink.attr("href"));
+	//         if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+	//             $('.nav ul li a').removeClass("active");
+	//             currLink.addClass("active");
+	//         }
+	//         else{
+	//             currLink.removeClass("active");
+	//         }
+	//     });
+	// }
 
 
 	// Page loading animation
@@ -252,41 +252,41 @@
     }
 
 
-	function visible(partial) {
-        var $t = partial,
-            $w = jQuery(window),
-            viewTop = $w.scrollTop(),
-            viewBottom = viewTop + $w.height(),
-            _top = $t.offset().top,
-            _bottom = _top + $t.height(),
-            compareTop = partial === true ? _bottom : _top,
-            compareBottom = partial === true ? _top : _bottom;
+	// function visible(partial) {
+    //     var $t = partial,
+    //         $w = jQuery(window),
+    //         viewTop = $w.scrollTop(),
+    //         viewBottom = viewTop + $w.height(),
+    //         _top = $t.offset().top,
+    //         _bottom = _top + $t.height(),
+    //         compareTop = partial === true ? _bottom : _top,
+    //         compareBottom = partial === true ? _top : _bottom;
 
-        return ((compareBottom <= viewBottom) && (compareTop >= viewTop) && $t.is(':visible'));
+    //     return ((compareBottom <= viewBottom) && (compareTop >= viewTop) && $t.is(':visible'));
 
-    }
+    // }
 
     $(window).scroll(function() {
 
-        if (visible($('.count-digit'))) {
-            if ($('.count-digit').hasClass('counter-loaded')) return;
-            $('.count-digit').addClass('counter-loaded');
+        // if (visible($('.count-digit'))) {
+        //     if ($('.count-digit').hasClass('counter-loaded')) return;
+        //     $('.count-digit').addClass('counter-loaded');
 
-            $('.count-digit').each(function() {
-                var $this = $(this);
-                jQuery({
-                    Counter: 0
-                }).animate({
-                    Counter: $this.text()
-                }, {
-                    duration: 3000,
-                    easing: 'swing',
-                    step: function() {
-                        $this.text(Math.ceil(this.Counter));
-                    }
-                });
-            });
-        }
+        //     $('.count-digit').each(function() {
+        //         var $this = $(this);
+        //         jQuery({
+        //             Counter: 0
+        //         }).animate({
+        //             Counter: $this.text()
+        //         }, {
+        //             duration: 3000,
+        //             easing: 'swing',
+        //             step: function() {
+        //                 $this.text(Math.ceil(this.Counter));
+        //             }
+        //         });
+        //     });
+        // }
     })
 
 

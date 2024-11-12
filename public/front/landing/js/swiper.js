@@ -1,10 +1,10 @@
 var interleaveOffset = 0.5;
-
+var autoplayDelay = 3000;
 var swiperOptions = {
     loop: true,
-    speed: 1000,
+    speed: 500,
     autoplay: {
-        delay: 5000,
+        delay: autoplayDelay,
     },
     grabCursor: true,
     watchSlidesProgress: true,
@@ -40,6 +40,12 @@ var swiperOptions = {
                 ).style.transition = speed + "ms";
             }
         },
+        slideChangeTransitionEnd: function () {
+            startProgressBar(this.realIndex);
+        },
+        init: function () {
+            startProgressBar(this.realIndex);
+        },
     },
 };
 
@@ -53,3 +59,18 @@ document.querySelectorAll(".slide-img").forEach(function (element) {
         swiper.slideTo(slideIndex + swiper.loopedSlides, 500);
     });
 });
+function startProgressBar(slideIndex) {
+    document.querySelectorAll(".progress-bar").forEach((bar) => {
+        bar.classList.remove("active");
+        bar.style.width = "0";
+        bar.style.opacity = "0";
+    });
+
+    var activeProgressBar = document.getElementById(`progress-${slideIndex}`);
+
+    if (activeProgressBar) {
+        activeProgressBar.style.opacity = "1";
+        activeProgressBar.classList.add("active");
+        activeProgressBar.style.animationDuration = `${swiperOptions.autoplay.delay}ms`;
+    }
+}
