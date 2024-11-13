@@ -9,13 +9,14 @@
 
     <link href="{{ asset('front/plugins/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('front/landing/css/fontawesome.css') }}">
-    <link rel="stylesheet" href="{{ asset('front/landing/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('front/landing/css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('front/plugins/swiper/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/plugins/fontawesome/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/landing/css/style.css') }}">
 
 </head>
 
-<body style="height: 200rem">
+<body style="height: 400rem">
     @include('landing.includes.header')
     <div class="swiper-container" id="top">
         <div class="swiper-wrapper">
@@ -248,6 +249,175 @@
             </div>
         </div>
     </section>
+
+    {{-- Branches --}}
+    <section class="top-section" id="branches">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="section-heading">
+                    <h6>Our Branches</h6>
+                    <h4>See Where We Are</h4>
+                </div>
+                <div class="row cards mt-2 g-3">
+                    <div class="card border-none col-12 col-lg-3 col-md-4 col-sm-6 ">
+                        <div class="col-12 text-center fs-1">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title mb-3 text-center">ALL-NEW PATROL</h5>
+                            <div class="col-12 text-center">
+                                <p class="location">133 st california</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card border-none col-12 col-lg-3 col-md-4 col-sm-6 ">
+                        <div class="col-12 text-center fs-1">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title mb-3 text-center">ALL-NEW PATROL</h5>
+                            <div class="col-12 text-center">
+                                <p class="location">133 st california</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card border-none col-12 col-lg-3 col-md-4 col-sm-6 ">
+                        <div class="col-12 text-center fs-1">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title mb-3 text-center">ALL-NEW PATROL</h5>
+                            <div class="col-12 text-center">
+                                <p class="location">133 st california</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card border-none col-12 col-lg-3 col-md-4 col-sm-6 ">
+                        <div class="col-12 text-center fs-1">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title mb-3 text-center">ALL-NEW PATROL</h5>
+                            <div class="col-12 text-center">
+                                <p class="location">133 st california</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card border-none col-12 col-lg-3 col-md-4 col-sm-6 ">
+                        <div class="col-12 text-center fs-1">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title mb-3 text-center">ALL-NEW PATROL</h5>
+                            <div class="col-12 text-center">
+                                <p class="location">133 st california</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card border-none col-12 col-lg-3 col-md-4 col-sm-6 ">
+                        <div class="col-12 text-center fs-1">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title mb-3 text-center">ALL-NEW PATROL</h5>
+                            <div class="col-12 text-center">
+                                <p class="location">133 st california</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- Form booking --}}
+    <section class="top-section mt-3" id="book">
+        <div class="section-heading mb-4">
+            <h2>Book Now</h2>
+        </div>
+        <div class="container d-flex justify-content-center">
+            <div class="form px-4 py-4 col-8 col-md-6 ">
+                <h4>Fill The Form</h4>
+                <div>
+                    <div class="title">
+                        1.Select your Dream Car
+                    </div>
+                    <div class="input-wrapper d-flex justify-content-between align-items-center ">
+                        <div class="d-flex flex-column col-6 ">
+                            <label for="car-select">Preferred Model *</label>
+                            <select class="form-select" id="car-select">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <img src="{{ asset('front/landing/images/ALL-NEW-PATROL.webp.ximg.l_4_m.smart.webp') }}"
+                            alt="" class="col-5">
+                    </div>
+                </div>
+                <div>
+                    <div class="title">
+                        2.Provide Your Details
+                    </div>
+                    <div class="inputs d-flex flex-column " style="gap: 45px">
+                        <div class="input-wrapper d-flex justify-content-between align-items-center ">
+                            <div class="d-flex flex-column col-12 ">
+                                <label for="car-select">Service Type *</label>
+                                <select class="form-select" id="car-select">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-wrapper d-flex justify-content-between align-items-center ">
+                            <div class="d-flex flex-column col-12">
+                                <label for="car-select">First Name *</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="input-wrapper d-flex justify-content-between align-items-center ">
+                            <div class="d-flex flex-column col-12">
+                                <label for="car-select">Last Name *</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="input-wrapper d-flex justify-content-between align-items-center ">
+                            <div class="d-flex flex-column col-12">
+                                <label for="car-select">Phone Number *</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="checkbox">
+                    <div class="form-group">
+                        <div class="checkbox-container">
+                            <input type="checkbox" name="checkbox" value="true" checked=""
+                                data-request-variable="">
+                            <label for="checkbox">
+                                Are You Agree With Our <a href="#">Terms And Conditions</a>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="button filled-button mt-3">
+                    <a href="#">Send</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <script src="{{ asset('front/plugins/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('front/plugins/jquery/jquery-ui.min.js') }}"></script>
 

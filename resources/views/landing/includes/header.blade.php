@@ -9,6 +9,7 @@
                     <ul class="nav">
                         <li class="scroll-to-section"><a href="#top">Home</a></li>
                         <li class="scroll-to-section"><a href="#about">About</a></li>
+                        <li class="scroll-to-section"><a href="#about">Branches</a></li>
                         <li class="has-sub">
                             <a href="javascript:void(0)">Pages</a>
                             <ul class="sub-menu">
