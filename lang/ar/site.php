@@ -198,7 +198,16 @@ return [
     'product_excel_example' => "مثال اكسل",
     'upload' => "رفع",
     'products_import_example_not_found' => "المثال غير موجود",
-    'state_title'=>'المحافظة',
-    'city_title'=>'المدينة',
-    
+    'state_title' => 'المحافظة',
+    'city_title' => 'المدينة',
+
+    'slider' => 'السلايدر',
+    'slider_title' => 'عنوان السلايدر',
+    'edit_slider' => 'تعديل السلايدر',
+    'add_slider' => 'اضافة سلايدر',
+    'slider_image' => 'صورة السلايدر',
+    'slider_status' => 'حالة السلايدر',
+    'delete_slider' => 'حذف السلايدر',
+    'delete_slider_confirm'=>'هل انت متاكد من حذف هذا السلايدر؟',
+
 ];

@@ -206,4 +206,13 @@ return [
     ],
     'state_title' => "State",
     'city_title' => "City",
+
+    'slider' => 'Slider',
+    'slider_title' => 'Slider Title',
+    'edit_slider' => 'Edit Slider',
+    'add_slider' => 'Add Slider',
+    'slider_image' => 'Slider Image',
+    'slider_status' => 'Slider Status',
+    'delete_slider' => 'Delete Slider',
+    'delete_slider_confirm'=>'Are you sure you want to delete this slider?',
 ];
