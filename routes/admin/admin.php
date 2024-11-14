@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\OffersController;
 use App\Http\Controllers\Admin\SlidersController;
+use App\Http\Controllers\Admin\BranchesController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('yf-admin')->name('dashboard.')->group(function () {
@@ -28,9 +29,17 @@ Route::prefix('yf-admin')->name('dashboard.')->group(function () {
             Route::post('/store', [SlidersController::class, 'store'])->name('sliders.store');
             Route::get('/edit/{id}', [SlidersController::class, 'edit'])->name('sliders.edit');
             Route::put('/update/{id}', [SlidersController::class, 'update'])->name('sliders.update');
-            Route::post('/update-image/{id}', [SlidersController::class, 'updateImage'])->name('sliders.updateImage');
             Route::post("/change-status/{id}", [SlidersController::class, 'changeStatus'])->name('sliders.changeStatus');
             Route::delete('/{id}', [SlidersController::class, 'destroy'])->name('sliders.destroy');
+        });
+        Route::prefix('branches')->group(function () {
+            Route::get('/', [BranchesController::class, 'index'])->name('branches.index');
+            Route::get('/add', [BranchesController::class, 'create'])->name('branches.create');
+            Route::post('/store', [BranchesController::class, 'store'])->name('branches.store');
+            Route::get('/edit/{id}', [BranchesController::class, 'edit'])->name('branches.edit');
+            Route::put('/update/{id}', [BranchesController::class, 'update'])->name('branches.update');
+            Route::post("/change-status/{id}", [BranchesController::class, 'changeStatus'])->name('branches.changeStatus');
+            Route::delete('/{id}', [BranchesController::class, 'destroy'])->name('branches.destroy');
         });
     });
 

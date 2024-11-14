@@ -20,6 +20,12 @@
                         <span class="menu-text"> Sliders </span>
                     </a>
                 </li>
+                <li class="">
+                    <a href="{{ route('dashboard.branches.index') }}">
+                        <span class="nav-icon uil uil-git"></span>
+                        <span class="menu-text"> Branches </span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
