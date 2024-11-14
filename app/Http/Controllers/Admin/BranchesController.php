@@ -16,8 +16,7 @@ class BranchesController extends Controller
         $query = Branch::query();
         if (request('search')) {
             $search = request("search");
-            $search = str_replace("#", "", $search);
-            $query->whereTranslationLike("title", "%{$search}%");
+            $query->whereTranslationLike("branch_name", "%{$search}%")->orWhereTranslationLike("branch_address", "%{$search}%")->orWhereTranslationLike("branch_services", "%{$search}%")->orWhere("branch_phone", "LIKE", "%{$search}%");
         }
 
         $branches = $query->paginate(10);
@@ -46,6 +45,7 @@ class BranchesController extends Controller
             $rules["{$localeCode}.branch_services"] = "required|max:255";
         }
         $rules['branch_phone'] = "required|max:255";
+        $rules['location_url'] = "required|url";
         $data = $request->validate($rules);
 
         Branch::create($data);
@@ -65,6 +65,8 @@ class BranchesController extends Controller
             $rules["{$localeCode}.branch_services"] = "required|max:255";
         }
         $rules['branch_phone'] = "required|max:255";
+        $rules['location_url'] = "required|url";
+
         $data = $request->validate($rules);
 
         $branch = Branch::find($id);

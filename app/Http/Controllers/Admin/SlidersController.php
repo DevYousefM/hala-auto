@@ -16,7 +16,6 @@ class SlidersController extends Controller
         $query = Slider::query();
         if (request('search')) {
             $search = request("search");
-            $search = str_replace("#", "", $search);
             $query->whereTranslationLike("title", "%{$search}%");
         }
 

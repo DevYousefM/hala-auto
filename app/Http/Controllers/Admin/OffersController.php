@@ -22,7 +22,6 @@ class OffersController extends Controller
         $query = Product::query();
         if (request('search')) {
             $search = request("search");
-            $search = str_replace("#", "", $search);
             $query->where("name", 'LIKE', "%{$search}%")
                 ->orWhere("slug", 'LIKE', "%{$search}%")
                 ->orWhereHas('style', function ($q) use ($search) {

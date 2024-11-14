@@ -31,7 +31,7 @@
                                     @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $locale)
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <label for="title"
+                                                <label for="{{ $localeCode . '.branch_name' }}"
                                                     class="il-gray fs-14 fw-500 align-center mb-10">{{ $locale['name'] }}
                                                     Branch Name</label>
                                                 <input type="text"
@@ -49,7 +49,7 @@
                                     @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $locale)
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <label for="title"
+                                                <label for="{{ $localeCode . '.branch_address' }}"
                                                     class="il-gray fs-14 fw-500 align-center mb-10">{{ $locale['name'] }}
                                                     Branch Address</label>
                                                 <input type="text"
@@ -68,7 +68,7 @@
                                     @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $locale)
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <label for="branch_services"
+                                                <label for="{{ $localeCode . '.branch_services' }}"
                                                     class="il-gray fs-14 fw-500 align-center mb-10">{{ $locale['name'] }}
                                                     Branch Services</label>
                                                 <input type="text"
@@ -85,12 +85,26 @@
                                     @endforeach
                                     <div class="col-12 col-lg-6">
                                         <div class="form-group">
-                                            <label for="branch_services" class="il-gray fs-14 fw-500 align-center mb-10">
+                                            <label for="branch_phone" class="il-gray fs-14 fw-500 align-center mb-10">
                                                 Branch Phone</label>
                                             <input type="text"
                                                 class="form-control form-control-lg @error('branch_phone') is-invalid @enderror"
                                                 id="branch_phone" name="branch_phone" value="{{ old('branch_phone') }}">
-                                            @error('title')
+                                            @error('branch_phone')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-6">
+                                        <div class="form-group">
+                                            <label for="location_url" class="il-gray fs-14 fw-500 align-center mb-10">
+                                                Branch Location URL</label>
+                                            <input type="text"
+                                                class="form-control form-control-lg @error('location_url') is-invalid @enderror"
+                                                id="location_url" name="location_url" value="{{ old('location_url') }}">
+                                            @error('location_url')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>

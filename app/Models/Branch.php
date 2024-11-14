@@ -10,6 +10,6 @@ class Branch extends Model implements TranslatableContract
 {
     use Translatable;
 
-    protected $fillable = ['branch_phone','status'];
+    protected $fillable = ['branch_phone','location_url','status'];
     public $translatedAttributes = ['branch_name', 'branch_address',  'branch_services'];
 }
