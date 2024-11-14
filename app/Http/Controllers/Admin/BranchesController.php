@@ -54,7 +54,7 @@ class BranchesController extends Controller
     public function edit(Request $request, $id)
     {
         $branch = Branch::find($id);
-        return view('dashboard.branches.edit', compact('Branch'));
+        return view('dashboard.branches.edit', compact('branch'));
     }
     public function update(Request $request, $id)
     {
