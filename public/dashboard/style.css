@@ -1,8 +1,8 @@
 /*
 Template Name: HexaDash
-Template URI: 
+Template URI:
 Author: SovWare
-Author URI: 
+Author URI:
 Version: 1.1.0
 NB: this file contains the list of components/scss partial along with the style.scss contents order.
 
@@ -13473,7 +13473,7 @@ body.top-menu .navbar-left .customizer-trigger + .top-menu {
 }
 
 .dm-upload-avatar .avatrSrc {
-  max-width: 100px;
+  max-width: 150px;
 }
 .dm-upload-avatar .upload-avatar-input {
   display: none;

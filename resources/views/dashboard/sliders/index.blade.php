@@ -41,17 +41,7 @@
                                             type="search" placeholder="Filter by keyword" aria-label="Search">
                                     </form>
                                 </div><!-- End: .project-search -->
-                                <div class="project-category d-flex align-items-center ms-md-30 mt-xxl-10 mt-15">
-                                    <p class="fs-14 color-gray text-capitalize mb-10 mb-md-0  me-10">Status :</p>
-                                    <div class="project-tap order-project-tap global-shadow">
-                                        <ul class="nav px-1" id="ap-tab" role="tablist">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" id="ap-overview-tab" data-bs-toggle="pill"
-                                                    href="#ap-overview" role="tab" aria-selected="true">All</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div><!-- End: .project-category -->
+
                             </div><!-- End: .d-flex -->
                         </div><!-- End: .project-top-wrapper -->
                         <div class="table-responsive">

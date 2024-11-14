@@ -30,7 +30,8 @@
                                 <div class="row">
                                     <div class="col-12 col-lg-6">
                                         <div class="form-group">
-                                            <label for="title" class="il-gray fs-14 fw-500 align-center mb-10">Slider Title</label>
+                                            <label for="title" class="il-gray fs-14 fw-500 align-center mb-10">Slider
+                                                Title</label>
                                             <input type="text" class="form-control form-control-lg" id="title"
                                                 name="title" value="{{ old('title') }}">
                                             @error('title')
@@ -40,9 +41,6 @@
                                             @enderror
                                         </div>
                                     </div>
-                                </div>
-
-                                <div class="row">
                                     <div class="col-12 col-lg-6">
                                         <div class="form-group">
                                             <div class="dm-tag-wrap">
@@ -70,6 +68,10 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+
+                                <div class="row">
+
                                     <button class="btn btn-primary btn-default btn-squared " type="submit">
                                         {{ trans('site.add_slider') }}
                                     </button>

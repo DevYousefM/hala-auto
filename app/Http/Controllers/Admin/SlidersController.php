@@ -16,13 +16,7 @@ class SlidersController extends Controller
         if (request('search')) {
             $search = request("search");
             $search = str_replace("#", "", $search);
-            $query->where("name", 'LIKE', "%{$search}%")
-                ->orWhere("slug", 'LIKE', "%{$search}%")
-                ->orWhereHas('style', function ($q) use ($search) {
-                    $q->where('name', 'LIKE', "%{$search}%");
-                })->orWhereHas('material', function ($q) use ($search) {
-                    $q->where('name', 'LIKE', "%{$search}%");
-                });
+            $query->where("title", 'LIKE', "%{$search}%");
         }
 
         $sliders = $query->paginate(10);
@@ -72,7 +66,7 @@ class SlidersController extends Controller
         $slider = Slider::find($id);
         if ($request->hasFile('image')) {
             $slider->delete_image();
-            
+
             $slide_image = ConvertAndStore($request->file('image'), "sliders/images/");
             $data["image"] = $slide_image;
         }

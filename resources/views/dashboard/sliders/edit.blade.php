@@ -52,8 +52,6 @@
                                             @enderror
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
                                     <div class="col-12 col-lg-6">
                                         <div class="form-group">
                                             <div class="dm-tag-wrap">
@@ -80,6 +78,8 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="d-flex justify-content-end">
                                         <button class="btn btn-primary btn-default btn-squared " type="submit">
                                             {{ trans('site.edit_slider') }}
