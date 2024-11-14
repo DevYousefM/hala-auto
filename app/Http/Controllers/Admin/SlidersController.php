@@ -59,10 +59,13 @@ class SlidersController extends Controller
     }
     public function update(Request $request, $id)
     {
-        $data = $request->validate([
-            'title' => "required|max:255",
-            'image' => "required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:4096",
-        ]);
+        $rules = [];
+        foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties) {
+            $rules["{$localeCode}.title"] = "required|max:255";
+        }
+        $rules["image"] = "nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:4096";
+
+        $data = $request->validate($rules);
 
         $slider = Slider::find($id);
         if ($request->hasFile('image')) {

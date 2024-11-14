@@ -39,19 +39,25 @@
                                 @csrf
                                 @method('PUT')
                                 <div class="row">
-                                    <div class="col-12 col-lg-6">
-                                        <div class="form-group">
-                                            <label for="title" class="il-gray fs-14 fw-500 align-center mb-10">Slider
-                                                Title</label>
-                                            <input type="text" class="form-control form-control-lg" id="title"
-                                                name="title" value="{{ old('title', $slider->title) }}">
-                                            @error('title')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
+                                    @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $locale)
+                                        <div class="col-12 col-lg-6">
+                                            <div class="form-group">
+                                                <label for="title"
+                                                    class="il-gray fs-14 fw-500 align-center mb-10">{{ $locale['name'] }}
+                                                    Slider Title</label>
+                                                <input type="text"
+                                                    class="form-control form-control-lg @error($localeCode . '.title') is-invalid @enderror"
+                                                    id="title" name="{{ $localeCode }}[title]"
+                                                    value="{{ old("{$localeCode}.title", $slider->translate($localeCode)->title ?? '') }}">
+                                                @error($localeCode . '.title')
+                                                    <div class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
                                         </div>
-                                    </div>
+                                    @endforeach
+
                                     <div class="col-12 col-lg-6">
                                         <div class="form-group">
                                             <div class="dm-tag-wrap">
