@@ -17,7 +17,7 @@ class SlidersController extends Controller
         if (request('search')) {
             $search = request("search");
             $search = str_replace("#", "", $search);
-            $query->where("title", 'LIKE', "%{$search}%");
+            $query->whereTranslationLike("title", "%{$search}%");
         }
 
         $sliders = $query->paginate(10);
