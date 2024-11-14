@@ -41,10 +41,10 @@ var swiperOptions = {
             }
         },
         slideChangeTransitionEnd: function () {
-            startProgressBar(this.realIndex);
+            startProgressBar(this.realIndex + 1);
         },
         init: function () {
-            startProgressBar(this.realIndex);
+            startProgressBar(this.realIndex + 1);
         },
     },
 };
@@ -53,10 +53,8 @@ var swiper = new Swiper(".swiper-container", swiperOptions);
 
 document.querySelectorAll(".slide-img").forEach(function (element) {
     element.addEventListener("click", function () {
-        console.log(this.getAttribute("data-slide"));
-
         var slideIndex = parseInt(this.getAttribute("data-slide"), 10);
-        swiper.slideTo(slideIndex + swiper.loopedSlides, 500);
+        swiper.slideTo(slideIndex, 500);
     });
 });
 function startProgressBar(slideIndex) {

@@ -14,6 +14,12 @@
                         <span class="menu-text"> Offers </span>
                     </a>
                 </li>
+                <li class="">
+                    <a href="{{ route('dashboard.sliders.index') }}">
+                        <span class="nav-icon uil uil-arrows-h-alt"></span>
+                        <span class="menu-text"> Sliders </span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

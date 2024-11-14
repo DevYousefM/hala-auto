@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
-class ProductController extends Controller
+class OffersController extends Controller
 {
     public function index(Request $request)
     {

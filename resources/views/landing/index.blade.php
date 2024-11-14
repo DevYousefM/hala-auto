@@ -20,40 +20,21 @@
     @include('landing.includes.header')
     <div class="swiper-container" id="top">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <div class="slide-inner" style="background-image:url({{ asset('front/landing/images/slide-01.jpg') }})">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <div class="header-text">
-                                    <h2>0 Get ready for your business<br>&amp; upgrade all aspects</h2>
-                                    <div class="buttons">
-                                        <div class="button filled-button">
-                                            <a href="#">Discover More</a>
-                                        </div>
-                                        <div class="button outline-button">
-                                            <a href="#">Contact Us</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="slide-inner" style="background-image:url({{ asset('front/landing/images/slide-02.jpg') }})">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <div class="header-text">
-                                    <h2>1 Digital Currency for you <br>&amp; Best Crypto Tips</h2>
-                                    <div class="buttons">
-                                        <div class="button filled-button">
-                                            <a href="#">Discover More</a>
-                                        </div>
-                                        <div class="button outline-button">
-                                            <a href="#">Contact Us</a>
+            @foreach ($sliders as $slide)
+                <div class="swiper-slide">
+                    <div class="slide-inner" style="background-image:url({{ $slide->image }})">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="header-text">
+                                        <h2>{{ $slide->title }}</h2>
+                                        <div class="buttons">
+                                            <div class="button filled-button">
+                                                <a href="#">Discover More</a>
+                                            </div>
+                                            <div class="button outline-button">
+                                                <a href="#">Contact Us</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -61,49 +42,20 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="slide-inner" style="background-image:url({{ asset('front/landing/images/slide-03.jpg') }})">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <div class="header-text">
-                                    <h2>2 Best One in Town<br>&amp; Crypto Services</h2>
-                                    <div class="buttons">
-                                        <div class="button filled-button">
-                                            <a href="#">Discover More</a>
-                                        </div>
-                                        <div class="button outline-button">
-                                            <a href="#">Contact Us</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
         <div class="swiper-button-next swiper-button-white"></div>
         <div class="swiper-button-prev swiper-button-white"></div>
 
         <div class="images-container">
             <div class="images">
-                <div class="img-container" style="width: 30%">
-                    <div class="progress-bar" id="progress-0"></div>
-                    <img src="{{ asset('front/landing/images/slide-01.jpg') }}" style="width: 100%" class="slide-img"
-                        data-slide="0" alt="">
-                </div>
-                <div class="img-container" style="width: 30%">
-                    <div class="progress-bar" id="progress-1"></div>
-                    <img src="{{ asset('front/landing/images/slide-02.jpg') }}" style="width: 100%" class="slide-img"
-                        data-slide="1" alt="">
-                </div>
-                <div class="img-container" style="width: 30%">
-                    <div class="progress-bar" id="progress-2"></div>
-                    <img src="{{ asset('front/landing/images/slide-03.jpg') }}" style="width: 100%" class="slide-img"
-                        data-slide="2" alt="">
-                </div>
+                @foreach ($sliders as $i)
+                    <div class="img-container" style="width: {{ 100 / count($sliders) }}">
+                        <div class="progress-bar" id="progress-{{ $loop->iteration }}"></div>
+                        <img src="{{ $i->image }}" style="width: 100%"
+                            class="slide-img" data-slide="{{ $loop->iteration }}" alt="">
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
