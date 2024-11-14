@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class BranchTranslation extends Model
 {
     protected $fillable = ['branch_name', 'branch_address', 'branch_services'];
-    protected $timestamps = false;
+    public $timestamps = false;
 }

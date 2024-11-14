@@ -28,8 +28,7 @@
             <ul class="navbar-right__menu">
                 <li class="nav-flag-select">
                     <div class="dropdown-custom">
-                        <a href="javascript:;" class="nav-item-toggle"><img src="{{ asset('dashboard/img/flag.png') }}"
-                                alt="" class="rounded-circle"></a>
+                        
                         <div class="dropdown-parent-wrapper">
                             <div class="dropdown-wrapper dropdown-wrapper--small">
 

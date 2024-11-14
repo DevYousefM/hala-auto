@@ -22,7 +22,7 @@
                 </li>
                 <li class="">
                     <a href="{{ route('dashboard.branches.index') }}">
-                        <span class="nav-icon uil uil-git"></span>
+                        <span class="nav-icon uil uil-code-branch"></span>
                         <span class="menu-text"> Branches </span>
                     </a>
                 </li>

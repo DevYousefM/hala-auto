@@ -43,9 +43,9 @@ class BranchesController extends Controller
         foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties) {
             $rules["{$localeCode}.branch_name"] = "required|max:255";
             $rules["{$localeCode}.branch_address"] = "required|max:255";
-            $rules["{$localeCode}.branch_phone"] = "required|max:255";
             $rules["{$localeCode}.branch_services"] = "required|max:255";
         }
+        $rules['branch_phone'] = "required|max:255";
         $data = $request->validate($rules);
 
         Branch::create($data);
@@ -62,10 +62,9 @@ class BranchesController extends Controller
         foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties) {
             $rules["{$localeCode}.branch_name"] = "required|max:255";
             $rules["{$localeCode}.branch_address"] = "required|max:255";
-            $rules["{$localeCode}.branch_phone"] = "required|max:255";
             $rules["{$localeCode}.branch_services"] = "required|max:255";
         }
-
+        $rules['branch_phone'] = "required|max:255";
         $data = $request->validate($rules);
 
         $branch = Branch::find($id);
