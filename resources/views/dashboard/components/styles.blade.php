@@ -35,6 +35,7 @@
 
 <link rel="stylesheet" href="{{ asset('dashboard/assets/vendor_assets/css/wickedpicker.min.css') }}">
 
+<link rel="stylesheet" href="{{ asset('dashboard/assets/vendor_assets/css/ckeditor5.css') }}">
 <link rel="stylesheet" href="{{ asset('dashboard/assets/vendor_assets/css/toastr.css') }}">
 <link rel="stylesheet" href="{{ asset('dashboard/style.css') }}">
 {{-- Arabic Styles --}}
@@ -48,7 +49,7 @@
 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
 <style>
-    .btn-close{
+    .btn-close {
         margin: 0 !important;
     }
 </style>

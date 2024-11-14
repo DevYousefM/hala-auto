@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\OffersController;
 use App\Http\Controllers\Admin\SlidersController;
 use App\Http\Controllers\Admin\BranchesController;
+use App\Http\Controllers\Admin\TermsAndConditionsController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('yf-admin')->name('dashboard.')->group(function () {
@@ -40,6 +41,10 @@ Route::prefix('yf-admin')->name('dashboard.')->group(function () {
             Route::put('/update/{id}', [BranchesController::class, 'update'])->name('branches.update');
             Route::post("/change-status/{id}", [BranchesController::class, 'changeStatus'])->name('branches.changeStatus');
             Route::delete('/{id}', [BranchesController::class, 'destroy'])->name('branches.destroy');
+        });
+        Route::prefix('terms')->group(function () {
+            Route::get('/', [TermsAndConditionsController::class, 'index'])->name('terms.index');
+            Route::put('/update/{id}', [TermsAndConditionsController::class, 'update'])->name('terms.update');
         });
     });
 

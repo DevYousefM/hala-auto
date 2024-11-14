@@ -86,6 +86,8 @@
 
 <script src="{{ asset('dashboard/assets/theme_assets/js/leaflet-init.js') }}"></script>
 
+<script src="{{ asset('dashboard/assets/vendor_assets/js/ckeditor5.js') }}"></script>
+
 <script src="{{ asset('dashboard/assets/vendor_assets/js/toastr.min.js') }}"></script>
 
 <script src="{{ asset('dashboard/assets/theme_assets/js/main.js') }}"></script>

@@ -26,6 +26,12 @@
                         <span class="menu-text"> Branches </span>
                     </a>
                 </li>
+                <li class="">
+                    <a href="{{ route('dashboard.terms.index') }}">
+                        <span class="nav-icon uil uil-notes"></span>
+                        <span class="menu-text">Terms And Conditions</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
