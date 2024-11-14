@@ -208,6 +208,19 @@ return [
     'slider_image' => 'صورة السلايدر',
     'slider_status' => 'حالة السلايدر',
     'delete_slider' => 'حذف السلايدر',
-    'delete_slider_confirm'=>'هل انت متاكد من حذف هذا السلايدر؟',
+    'delete_slider_confirm' => 'هل انت متاكد من حذف هذا السلايدر؟',
+
+
+    'branch_phone' => 'رقم الهاتف',
+    'branch_address' => 'عنوان الفرع',
+    'branch_name' => 'اسم الفرع',
+    'branch_services' => 'خدمات الفرع',
+    'branch' => 'الفرع',
+    'branches' => 'الفروع',
+    'branches_title' => 'الفروع',
+    'add_branch' => 'اضافة فرع',
+    'edit_branch' => 'تعديل فرع',
+    'delete_branch' => 'حذف فرع',
+    'delete_branch_confirm' => 'هل انت متاكد من حذف هذا الفرع؟',
 
 ];

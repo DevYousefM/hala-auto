@@ -47,7 +47,7 @@ return [
         'name' => "Name En",
         'product_title' => "product title in english",
         'product_description' => "product description in english",
-        'receiving' => 'Receiving Period in english'
+        'receiving' => 'Receiving Period in english',
     ],
     'ar' => [
         'name' => 'Name Ar',
@@ -215,4 +215,17 @@ return [
     'slider_status' => 'Slider Status',
     'delete_slider' => 'Delete Slider',
     'delete_slider_confirm'=>'Are you sure you want to delete this slider?',
+
+
+    'branch_phone'=>'Branch Phone',
+    'branch_address'=> 'Branch Address',
+    'branch_name' => 'Branch Name',
+    'branch_services' => 'Branch Services',
+    'branch' => 'Branch',
+    'branches' => 'Branches',
+    'branches_title' => 'Branches',
+    'add_branch' => 'Add Branch',
+    'edit_branch' => 'Edit Branch',
+    'delete_branch' => 'Delete Branch',
+    'delete_branch_confirm'=>'Are you sure you want to delete this branch?',
 ];
