@@ -2,15 +2,16 @@
 
 namespace App\Models;
 
+use Astrotomic\Translatable\Translatable;
+use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 
-class Slider extends Model
+class Slider extends Model implements TranslatableContract
 {
-    protected $fillable = [
-        'title',
-        'image'
-    ];
+    use Translatable;
+    protected $fillable = ['image', 'status'];
+    public $translatedAttributes = ['title'];
 
     public function getImageAttribute()
     {

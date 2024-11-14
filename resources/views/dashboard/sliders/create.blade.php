@@ -28,19 +28,24 @@
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
-                                    <div class="col-12 col-lg-6">
-                                        <div class="form-group">
-                                            <label for="title" class="il-gray fs-14 fw-500 align-center mb-10">Slider
-                                                Title</label>
-                                            <input type="text" class="form-control form-control-lg" id="title"
-                                                name="title" value="{{ old('title') }}">
-                                            @error('title')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
+                                    @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $locale)
+                                        <div class="col-12 col-lg-6">
+                                            <div class="form-group">
+                                                <label for="title"
+                                                    class="il-gray fs-14 fw-500 align-center mb-10">{{ $locale['name'] }}
+                                                    Slider Title</label>
+                                                <input type="text"
+                                                    class="form-control form-control-lg @error($localeCode . '.title') is-invalid @enderror"
+                                                    id="title" name="{{ $localeCode }}[title]"
+                                                    value="{{ old($localeCode . '.title') }}">
+                                                @error($localeCode . '.title')
+                                                    <div class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
                                         </div>
-                                    </div>
+                                    @endforeach
                                     <div class="col-12 col-lg-6">
                                         <div class="form-group">
                                             <div class="dm-tag-wrap">
@@ -56,11 +61,11 @@
                                                         </div>
                                                         <div class="avatar-up">
                                                             <input type="file" name="image" id="slider_image"
-                                                                class="upload-avatar-input">
+                                                                class="upload-avatar-input ">
                                                         </div>
                                                     </div>
                                                     @error('image')
-                                                        <div class="invalid-feedback">
+                                                        <div class="invalid-feedback @error('image') d-block @enderror"  >
                                                             {{ $message }}
                                                         </div>
                                                     @enderror

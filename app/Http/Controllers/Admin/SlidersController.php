@@ -7,6 +7,7 @@ use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class SlidersController extends Controller
 {
@@ -38,17 +39,17 @@ class SlidersController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => "required|max:255",
-            'image' => "required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:4096",
-        ]);
+        $rules = [];
+        foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties) {
+            $rules["{$localeCode}.title"] = "required|max:255";
+        }
+        $rules["image"] = "required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:4096";
+        $data = $request->validate($rules);
+
         $slide_image = ConvertAndStore($request->file('image'), "sliders/images/");
+        $data["image"] = $slide_image;
 
-        $slider = Slider::create([
-            'title' => $request->title,
-            'image' => $slide_image,
-        ]);
-
+        Slider::create($data);
         return redirect()->route('dashboard.sliders.index')->with('success', 'Slider created successfully');
     }
     public function edit(Request $request, $id)
