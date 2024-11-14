@@ -52,8 +52,8 @@
                 @foreach ($sliders as $i)
                     <div class="img-container" style="width: {{ 100 / count($sliders) }}">
                         <div class="progress-bar" id="progress-{{ $loop->iteration }}"></div>
-                        <img src="{{ $i->image }}" style="width: 100%"
-                            class="slide-img" data-slide="{{ $loop->iteration }}" alt="">
+                        <img src="{{ $i->image }}" style="width: 100%" class="slide-img"
+                            data-slide="{{ $loop->iteration }}" alt="">
                     </div>
                 @endforeach
             </div>
@@ -210,79 +210,30 @@
                     <h6>Our Branches</h6>
                     <h4>See Where We Are</h4>
                 </div>
-                <div class="row cards mt-2 g-3">
-                    <div class="card border-none col-12 col-lg-3 col-md-4 col-sm-6 ">
-                        <div class="col-12 text-center fs-1">
-                            <i class="fas fa-location-dot"></i>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title mb-3 text-center">ALL-NEW PATROL</h5>
-                            <div class="col-12 text-center">
-                                <p class="location">133 st california</p>
+                <div class="row cards justify-content-center mt-2 g-3">
+                    @foreach ($branches as $branch)
+                        <div class="card border-none col-12 col-lg-3 col-md-4 col-sm-6 ">
+                            <div class="col-12 text-center fs-1">
+                                <a href="{{ $branch->location_url }}" class="text-black"><i
+                                        class="fas fa-location-dot"></i></a>
                             </div>
+                            <div class="card-body">
+                                <a href="{{ $branch->location_url }}">
+                                    <h5 class="card-title mb-2 text-center">{{ $branch->branch_name }}</h5>
+                                </a>
+                                <a href="{{ $branch->location_url }}">
+                                    <h4 class="branch-services mb-3 text-center">{{ $branch->branch_services }}</h4>
+                                </a>
+                                <h4 class="branch-phone mt-3 mb-3 text-center">{{ $branch->branch_phone }}</h4>
+                                <div class="col-12 text-center">
+                                    <a href="{{ $branch->location_url }}">
+                                        <p class="address">{{ $branch->branch_address }}</p>
+                                    </a>
+                                </div>
 
-                        </div>
-                    </div>
-                    <div class="card border-none col-12 col-lg-3 col-md-4 col-sm-6 ">
-                        <div class="col-12 text-center fs-1">
-                            <i class="fas fa-location-dot"></i>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title mb-3 text-center">ALL-NEW PATROL</h5>
-                            <div class="col-12 text-center">
-                                <p class="location">133 st california</p>
                             </div>
-
                         </div>
-                    </div>
-                    <div class="card border-none col-12 col-lg-3 col-md-4 col-sm-6 ">
-                        <div class="col-12 text-center fs-1">
-                            <i class="fas fa-location-dot"></i>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title mb-3 text-center">ALL-NEW PATROL</h5>
-                            <div class="col-12 text-center">
-                                <p class="location">133 st california</p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="card border-none col-12 col-lg-3 col-md-4 col-sm-6 ">
-                        <div class="col-12 text-center fs-1">
-                            <i class="fas fa-location-dot"></i>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title mb-3 text-center">ALL-NEW PATROL</h5>
-                            <div class="col-12 text-center">
-                                <p class="location">133 st california</p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="card border-none col-12 col-lg-3 col-md-4 col-sm-6 ">
-                        <div class="col-12 text-center fs-1">
-                            <i class="fas fa-location-dot"></i>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title mb-3 text-center">ALL-NEW PATROL</h5>
-                            <div class="col-12 text-center">
-                                <p class="location">133 st california</p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="card border-none col-12 col-lg-3 col-md-4 col-sm-6 ">
-                        <div class="col-12 text-center fs-1">
-                            <i class="fas fa-location-dot"></i>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title mb-3 text-center">ALL-NEW PATROL</h5>
-                            <div class="col-12 text-center">
-                                <p class="location">133 st california</p>
-                            </div>
-
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
